@@ -3,17 +3,19 @@ module.exports = {
         es6: true
     },
     parserOptions: {
-        ecmaVersion: 6,
-        sourceType: 'module',
         ecmaFeatures: {
             generators: false,
             objectLiteralDuplicateProperties: false
-        }
+        },
+        ecmaVersion: 6,
+        sourceType: 'module'
     },
     rules: {
         // require parens in arrow function arguments
         // http://eslint.org/docs/rules/arrow-parens
         'arrow-parens': ['error', 'as-needed'],
+
+        'no-unsafe-optional-chaining': 'error',
 
         // require property shorthand syntax for object literals
         // http://eslint.org/docs/rules/object-shorthand
@@ -30,6 +32,8 @@ module.exports = {
             {
                 enforceForRenamedProperties: true
             }
-        ]
+        ],
+
+        'prefer-template': 'error'
     }
 };

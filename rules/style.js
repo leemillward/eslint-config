@@ -10,8 +10,8 @@ module.exports = {
         camelcase: [
             'warn',
             {
-                properties: 'never',
-                ignoreDestructuring: true
+                ignoreDestructuring: true,
+                properties: 'never'
             }
         ],
 
@@ -21,6 +21,8 @@ module.exports = {
 
         'dot-location': ['error', 'property'],
 
+        'dot-notation': 'off',
+
         'function-call-argument-newline': 'off',
 
         'global-require': 'off',
@@ -29,20 +31,21 @@ module.exports = {
             'error',
             4,
             {
-                SwitchCase: 1,
-                VariableDeclarator: 'first',
-                MemberExpression: 'off',
-                // CallExpression: {
-                // parameters: null,
-                // },
                 FunctionDeclaration: {
-                    parameters: 1,
-                    body: 1
+                    body: 1,
+                    parameters: 1
                 },
                 FunctionExpression: {
-                    parameters: 1,
-                    body: 1
-                }
+                    body: 1,
+                    parameters: 1
+                },
+
+                MemberExpression: 'off',
+                SwitchCase: 1,
+                VariableDeclarator: 1,
+
+                ignoredNodes: ['TemplateLiteral'],
+                outerIIFEBody: 1
             }
         ],
 
@@ -50,8 +53,8 @@ module.exports = {
         'key-spacing': [
             'error',
             {
-                beforeColon: false,
                 afterColon: true,
+                beforeColon: false,
                 mode: 'minimum'
             }
         ],
@@ -66,13 +69,12 @@ module.exports = {
             'error',
             {
                 code: 200,
-                tabWidth: 4,
-                comments: 80,
-                ignoreUrls: true,
                 ignoreComments: false,
                 ignoreRegExpLiterals: true,
                 ignoreStrings: true,
-                ignoreTemplateLiterals: true
+                ignoreTemplateLiterals: true,
+                ignoreUrls: true,
+                tabWidth: 4
             }
         ],
 
@@ -113,7 +115,14 @@ module.exports = {
         // https://eslint.org/docs/rules/operator-linebreak
         'operator-linebreak': ['error', 'before'],
 
-        'padding-line-between-statements': 'off',
+        'padding-line-between-statements': [
+            'error',
+            {
+                blankLine: 'always',
+                next: 'return',
+                prev: '*'
+            }
+        ],
 
         'prefer-object-spread': 'error',
 
@@ -121,12 +130,16 @@ module.exports = {
             'error',
             'single',
             {
-                avoidEscape: true,
-                allowTemplateLiterals: true
+                allowTemplateLiterals: true,
+                avoidEscape: true
             }
         ],
 
         'semi-style': ['error', 'last'],
+
+        'sort-keys': ['error', 'asc', {
+            natural: true
+        }],
 
         // require or disallow space before function opening parenthesis
         // http://eslint.org/docs/rules/space-before-function-paren
@@ -134,8 +147,8 @@ module.exports = {
             'error',
             {
                 anonymous: 'always',
-                named: 'never',
-                asyncArrow: 'always'
+                asyncArrow: 'always',
+                named: 'always'
             }
         ],
 
@@ -146,12 +159,13 @@ module.exports = {
             'error',
             'always',
             {
-                line: {
+                block: {
+                    balanced: false,
                     exceptions: ['-', '*']
                 },
-                block: {
+                line: {
                     exceptions: ['-', '*'],
-                    balanced: false
+                    markers: ['global']
                 }
             }
         ],

@@ -2,19 +2,25 @@ module.exports = {
     rules: {
         'import/extensions': ['error', 'never'],
 
+        'import/no-anonymous-default-export': 'off',
+
         'import/no-dynamic-require': 'off',
 
         'import/no-extraneous-dependencies': 'error',
 
+        'import/no-import-module-exports': 'off',
+
         'import/no-named-export': 'off',
+
+        'import/no-relative-packages': 'warn',
 
         'import/no-relative-parent-imports': 'warn',
 
         'import/no-unresolved': [
             'error',
             {
-                commonjs: true,
-                caseSensitive: false
+                caseSensitive: false,
+                commonjs: true
             }
         ],
 
