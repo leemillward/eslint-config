@@ -137,9 +137,7 @@ module.exports = {
 
         'semi-style': ['error', 'last'],
 
-        'sort-keys': ['error', 'asc', {
-            natural: true
-        }],
+        'sort-keys': 'off',
 
         // require or disallow space before function opening parenthesis
         // http://eslint.org/docs/rules/space-before-function-paren
