@@ -1,50 +1,31 @@
 /* global danger, fail, message */
 
-const bodyAndTitle = (
-    danger.github.pr.body + danger.github.pr.title
-).toLowerCase();
+const bodyAndTitle = (danger.github.pr.body + danger.github.pr.title).toLowerCase();
 const isTrivial = bodyAndTitle.includes('#trivial');
+const isRenovate = danger.github.pr.title.startsWith('renovate');
 
-if (!isTrivial) {
+if (!isRenovate && !isTrivial) {
     // Fail if there isn’t a CHANGELOG entry – should update for every PR
     if (!danger.git.modified_files.includes('CHANGELOG.md')) {
-        const changelogLink = 'https://github.com/justeat/eslint-config-fozzie/blob/master/CHANGELOG.md';
-        fail(
-            `:memo: Please include a CHANGELOG entry. You can find the current version at <a href="${changelogLink}">CHANGELOG.md</a>`
-        );
+        const changelogLink = 'https://github.com/leemillward/eslint-config/blob/master/CHANGELOG.md';
+        fail(`:memo: Please include a CHANGELOG entry. You can find the current version at <a href="${changelogLink}">CHANGELOG.md</a>`);
     }
 
     // Check for version update
-    const hasPackageJsonChanged = danger.git.modified_files.includes(
-        'package.json'
-    );
+    const hasPackageJsonChanged = danger.git.modified_files.includes('package.json');
     const packageDiff = danger.git.JSONDiffForFile('package.json');
 
-    packageDiff.then(
-        result => {
-            if (
-                !hasPackageJsonChanged
-                || (hasPackageJsonChanged && !result.version)
-            ) {
-                const semverLink = 'https://docs.npmjs.com/getting-started/semantic-versioning';
-                /* eslint-disable no-console */ console.log(
-                    'Versioning Missing'
-                );
-                console.log(
-                    hasPackageJsonChanged,
-                    result
-                ); /* eslint-enable no-console */
-                fail(
-                    `:exclamation: This PR should include a <a href="${semverLink}">SEMVER</a> version bump, so that it can be published once merged.`
-                );
-            }
-        },
-        err => {
-            /* eslint-disable no-console */
-            console.log(err);
-            /* eslint-enable no-console */
+    packageDiff.then(result => {
+        if (!hasPackageJsonChanged || (hasPackageJsonChanged && !result.version)) {
+            const semverLink = 'https://docs.npmjs.com/getting-started/semantic-versioning';
+            /* eslint-disable no-console */console.log('Versioning Missing'); console.log(hasPackageJsonChanged, result);/* eslint-enable no-console */
+            fail(`:exclamation: This PR should include a <a href="${semverLink}">SEMVER</a> version bump, so that it can be published once merged.`);
         }
-    );
+    }, err => {
+        /* eslint-disable no-console */
+        console.log(err);
+        /* eslint-enable no-console */
+    });
 
     // Message on deletions
     if (danger.github.pr.deletions > danger.github.pr.additions) {
