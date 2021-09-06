@@ -1,7 +1,7 @@
 # @leemillward/eslint-config
 
 [![npm version](https://badge.fury.io/js/%40leemillward%2Feslint-config.svg)](https://badge.fury.io/js/%40leemillward%2Feslint-config)
-[![Build Status](https://travis-ci.org/leemillward/eslint-config.svg?branch=master)](https://travis-ci.org/leemillward/eslint-config)
+![Build Status](https://github.com/leemillward/eslint-config/actions/workflows/test.yml/badge.svg?branch=master)
 
 This package extends the [eslint-config-airbnb-base](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base) ruleset with our own set of JS linting rules. The structure is based on that package and also [@justeat/eslint-config/fozzie](https://github.com/justeat/eslint-config-fozzie).
 
