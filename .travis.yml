@@ -20,5 +20,5 @@ branches:
         - master
 
 script:
-    - yarn run test
-    - yarn danger ci
+    - npm run test
+    - npm run danger ci
