@@ -8,7 +8,7 @@
         "check-rules": "eslint-find-rules --unused",
         "tests-only": "babel-tape-runner ./test/test-*.js",
         "prepublishOnly": "(in-install || npm run check-rules) && (not-in-publish || npm run test) && safe-publish-latest",
-        "pretest": "npm run lint && npm check-rules",
+        "pretest": "npm run lint && npm run check-rules",
         "test": "npm run tests-only"
     },
     "repository": {
