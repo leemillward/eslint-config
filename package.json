@@ -28,7 +28,7 @@
         "babel-tape-runner": "3.0.0",
         "danger": "10.7.1",
         "eslint": "7.32.0",
-        "eslint-find-rules": "3.6.1",
+        "eslint-find-rules": "4.0.0",
         "in-publish": "2.0.1",
         "safe-publish-latest": "1.1.5",
         "tape": "5.3.1"
