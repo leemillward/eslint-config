@@ -62,6 +62,8 @@ module.exports = {
 
         'prefer-named-capture-group': 'off',
 
+        'prefer-object-has-own': 'warn',
+
         'prefer-regex-literals': 'off'
     }
 };
