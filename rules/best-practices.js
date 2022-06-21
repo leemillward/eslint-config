@@ -13,6 +13,8 @@ module.exports = {
             checkLoops: false
         }],
 
+        'no-constant-binary-expression': 'warn',
+
         'no-constructor-return': 'error',
 
         'no-dupe-else-if': 'error',
