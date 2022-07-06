@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import test from 'tape';
 
-// eslint-disable-next-line import/no-relative-parent-imports
 import index from '..';
 
 const files = { ...{ index } }; // object spread is to test parsing
