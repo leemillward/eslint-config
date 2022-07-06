@@ -109,7 +109,6 @@ module.exports = {
             'error',
             {
                 code: 200,
-                comments: 80,
                 ignoreComments: false,
                 ignoreRegExpLiterals: true,
                 ignoreStrings: true,
@@ -285,9 +284,7 @@ module.exports = {
 
         'vue/script-indent': 'off',
 
-        'vue/sort-keys': ['error', 'asc', {
-            natural: true
-        }],
+        'vue/sort-keys': 'off',
 
         'vue/space-in-parens': 'error',
 

@@ -6,7 +6,7 @@ module.exports = {
 
         'import/no-dynamic-require': 'off',
 
-        'import/no-extraneous-dependencies': 'error',
+        'import/no-extraneous-dependencies': 'off',
 
         'import/no-import-module-exports': 'off',
 
@@ -14,7 +14,7 @@ module.exports = {
 
         'import/no-relative-packages': 'warn',
 
-        'import/no-relative-parent-imports': 'warn',
+        'import/no-relative-parent-imports': 'off',
 
         'import/no-unresolved': [
             'error',

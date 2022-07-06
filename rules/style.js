@@ -4,7 +4,7 @@ module.exports = {
 
         'array-element-newline': 'off',
 
-        'brace-style': ['error', 'stroustrup'],
+        'brace-style': ['error', '1tbs'],
 
         // require camel case names
         camelcase: [

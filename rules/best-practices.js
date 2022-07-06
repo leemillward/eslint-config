@@ -44,6 +44,10 @@ module.exports = {
             }
         ],
 
+        'no-restricted-imports': ['warn', {
+            patterns: ['../*']
+        }],
+
         'no-setter-return': 'error',
 
         'no-sparse-arrays': 'warn',
