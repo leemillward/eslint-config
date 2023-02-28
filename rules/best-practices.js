@@ -7,6 +7,8 @@ module.exports = {
 
         'grouped-accessor-pairs': ['error', 'getBeforeSet'],
 
+        'logical-assignment-operators': 'off',
+
         'max-classes-per-file': 'error',
 
         'no-constant-condition': ['warn', {
@@ -28,9 +30,13 @@ module.exports = {
             }
         ],
 
+        'no-empty-static-block': 'warn',
+
         // disallow reassignments of native objects or read-only globals
         // http://eslint.org/docs/rules/no-global-assign
         'no-global-assign': ['error', { exceptions: [] }],
+
+        'no-new-native-nonconstructor': 'error',
 
         'no-nonoctal-decimal-escape': 'error',
 
