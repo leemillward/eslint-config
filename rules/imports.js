@@ -1,10 +1,14 @@
 module.exports = {
     rules: {
+        'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
+
         'import/extensions': ['error', 'never'],
 
         'import/no-anonymous-default-export': 'off',
 
         'import/no-dynamic-require': 'off',
+
+        'import/no-empty-named-blocks': 'error',
 
         'import/no-extraneous-dependencies': 'off',
 

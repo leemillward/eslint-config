@@ -3,7 +3,7 @@ module.exports = {
         // require default case in switch statements
         'default-case': ['error', { commentPattern: '^no default$' }],
 
-        'default-param-last': 'off',
+        'default-param-last': 'error',
 
         'grouped-accessor-pairs': ['error', 'getBeforeSet'],
 
@@ -39,6 +39,8 @@ module.exports = {
         'no-new-native-nonconstructor': 'error',
 
         'no-nonoctal-decimal-escape': 'error',
+
+        'no-object-constructor': 'error',
 
         // disallow reassignment of function parameters
         // disallow parameter object manipulation except for specific exclusions

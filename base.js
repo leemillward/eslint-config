@@ -1,15 +1,13 @@
 const resolvedExtends = [
-    '../rules/vue',
     'eslint-config-airbnb-base',
-    '../rules/best-practices',
-    '../rules/errors',
-    '../rules/node',
-    '../rules/style',
-    '../rules/es6',
-    '../rules/imports'
+    './rules/best-practices',
+    './rules/errors',
+    './rules/node',
+    './rules/style',
+    './rules/es6',
+    './rules/imports',
+    './rules/variables'
 ].map(require.resolve);
-
-resolvedExtends.unshift('plugin:vue/recommended');
 
 module.exports = {
     env: {
@@ -20,7 +18,7 @@ module.exports = {
     },
     extends: resolvedExtends,
     parserOptions: {
-        ecmaVersion: 2018,
+        ecmaVersion: 2022,
         sourceType: 'module'
     },
     root: true,

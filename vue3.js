@@ -1,13 +1,14 @@
 const resolvedExtends = [
-    '../rules/vue',
-    '../rules/vue3',
+    './rules/vue',
+    './rules/vue/vue3',
     'eslint-config-airbnb-base',
-    '../rules/best-practices',
-    '../rules/errors',
-    '../rules/node',
-    '../rules/style',
-    '../rules/es6',
-    '../rules/imports'
+    './rules/best-practices',
+    './rules/errors',
+    './rules/node',
+    './rules/style',
+    './rules/es6',
+    './rules/imports',
+    './rules/variables'
 ].map(require.resolve);
 
 resolvedExtends.unshift('plugin:vue/vue3-recommended');
