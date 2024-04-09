@@ -6,7 +6,8 @@ const resolvedExtends = [
     './rules/style',
     './rules/es6',
     './rules/imports',
-    './rules/variables'
+    './rules/variables',
+    './rules/deprecated'
 ].map(require.resolve);
 
 module.exports = {
